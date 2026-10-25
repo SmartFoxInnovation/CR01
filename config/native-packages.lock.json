@@ -1,0 +1,92 @@
+{
+  "native_packages": [
+    {
+      "name": "mingw-w64-ucrt-x86_64-openssl",
+      "version": "3.6.5-1",
+      "tool_version": "OpenSSL 3.6.5 29 Sep 2026 (Library: OpenSSL 3.6.5 29 Sep 2026)",
+      "license_files": [
+        {
+          "path": "ucrt64/share/licenses/openssl/LICENSE",
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+        }
+      ],
+      "runtime_artifacts": [
+        "libcrypto-3-x64.dll",
+        "libssl-3-x64.dll"
+      ],
+      "package_source": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-openssl-3.6.5-1-any.pkg.tar.zst",
+      "package_sha256": "773e021ebad83f14b5c103db467411e8ff064663e1c7e7f730e2be72f4117064"
+    },
+    {
+      "name": "mingw-w64-ucrt-x86_64-gcc",
+      "version": "15.2.0-13",
+      "tool_version": "g++.exe (Rev13, Built by MSYS2 project) 15.2.0",
+      "license_files": [
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/COPYING.LIB",
+          "sha256": "a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861"
+        },
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/COPYING.RUNTIME",
+          "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74"
+        },
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/COPYING3",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+        },
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/README",
+          "sha256": "33400d067fa3e2bd670a0868dcdb60c9486e8f559b675cf9ff1ff55d4e0d06ab"
+        }
+      ],
+      "runtime_artifacts": [],
+      "package_source": "pacman local database",
+      "package_sha256": null
+    },
+    {
+      "name": "mingw-w64-ucrt-x86_64-gcc-libs",
+      "version": "15.2.0-13",
+      "tool_version": "g++.exe (Rev13, Built by MSYS2 project) 15.2.0",
+      "license_files": [
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/COPYING.LIB",
+          "sha256": "a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861"
+        },
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/COPYING.RUNTIME",
+          "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74"
+        },
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/COPYING3",
+          "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+        },
+        {
+          "path": "ucrt64/share/licenses/gcc-libs/README",
+          "sha256": "33400d067fa3e2bd670a0868dcdb60c9486e8f559b675cf9ff1ff55d4e0d06ab"
+        }
+      ],
+      "runtime_artifacts": [
+        "libgcc_s_seh-1.dll",
+        "libstdc++-6.dll"
+      ],
+      "package_source": "pacman local database",
+      "package_sha256": null
+    },
+    {
+      "name": "mingw-w64-ucrt-x86_64-libwinpthread",
+      "version": "13.0.0.r560.g3197fc7d6-1",
+      "tool_version": null,
+      "license_files": [
+        {
+          "path": "ucrt64/share/licenses/libwinpthread/COPYING",
+          "sha256": "63263614cdd29f2f93cba85e992f041b31f9fc7b4033692f31269489a8a1b177"
+        }
+      ],
+      "runtime_artifacts": [
+        "libwinpthread-1.dll"
+      ],
+      "package_source": "pacman local database",
+      "package_sha256": null
+    }
+  ]
+}

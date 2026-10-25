@@ -1,0 +1,17 @@
+CR01-SC Validation Edition
+Copyright 2026 CR01 contributors.
+
+CR01-SC is a research prototype for secret-context cryptographic mechanics.
+It is not a FIPS-validated cryptographic module, not a military-approved
+system, and not production cryptography.
+
+CR01-SC is source-available under PolyForm Noncommercial License 1.0.0.
+It may be used, modified, and redistributed only for purposes permitted by
+that license. Commercial use is not granted. The intended public purpose is
+independent study, research, testing, confirmation, and falsification.
+
+Required Notice: CR01-SC is licensed under PolyForm Noncommercial 1.0.0. Commercial use requires an explicit commercial license.
+
+This product includes software developed by the CR01 contributors.
+Third-party dependency and data provenance notes are documented in
+THIRD_PARTY_NOTICES.md.

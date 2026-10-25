@@ -1,0 +1,668 @@
+{
+  "schema": "CR01-V2-TRANSPORT-BENCH-v1",
+  "status": "pass",
+  "product_version": "0.15.2",
+  "started_at": "2026-10-25T00:50:53.527295+00:00",
+  "finished_at": "2026-10-25T00:52:46.141058+00:00",
+  "environment": {
+    "system": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+    "python": "3.14.7",
+    "cryptography": "50.0.2",
+    "python_openssl": "OpenSSL 4.0.3 29 Sep 2026",
+    "compiler": "g++.exe (Rev13, Built by MSYS2 project) 15.2.0",
+    "native_openssl": [
+      "OpenSSL 3.6.5 29 Sep 2026"
+    ]
+  },
+  "source_sha256": {
+    "src/cpp/channel_binary.hpp": "957696dc0aa74b47a1637ba32bc7bc3674d3c8b963c2eb087ccc2d3f7dd4f285",
+    "src/cpp/channel_v2_core.hpp": "449f405fd7cc1d028097a478c67977df6ebbcbed54924a7c69d623e25b2f1569",
+    "src/cpp/channel_v2_crypto.hpp": "7430d876e7bc100df0561e20cb80081719d630c8bb6484b8ecb47b7edcb18065",
+    "src/cpp/channel_v2_endpoint.hpp": "09254f950befefa95e0f17a75e24d30f71f041b6ea67792fb31d1ed33fdc5b28",
+    "src/cpp/channel_v2_flight.hpp": "ace4a2c8b7dbdd87ba722876d109df5181052f4f37e5025d1d87916a16395c86",
+    "src/cpp/channel_v2_gcm.hpp": "293966ee202f3395792d21254186ad007ce6713acf3d81002c582850cbe00986",
+    "src/cpp/channel_v2_identity.hpp": "7867d7cbb234724409ff29321cecf1edba84af6ae32f5217b6a9411e85585f0a",
+    "src/cpp/channel_v2_plaintext.hpp": "4351c69b989c511c7bf2038b72fef91bf67ec68122ab1916705f5bcf7eae0042",
+    "src/cpp/channel_v2_secret.hpp": "dff2948dc4fcb0d76fec73cb3a246baf41831f7bef99f9ab5e36a368f28c75ef",
+    "src/cpp/crypto.hpp": "126e5e70a40666f1f2dca00f459098d8164801f8d8cda99f6c7b10d08dd19ec3",
+    "src/cpp/json.hpp": "13d72c6dde422b92dcab1b7512ebb4249df9d3f69e86f2e97f186e69eb388783",
+    "src/cpp/main.cpp": "3bd1e91d743b77ca8f79cc6c72d731f92b23eb799c4986eaffaf42d6fa2b0d86",
+    "src/python/cr01_sc/binary.py": "f3e430ec73830f514f860599a1ef4c067c02442f0b0e4cb02522b7b6ef70c8ff",
+    "src/python/cr01_sc/channel.py": "502d2b6fec271287854f67aad21e1993f14113e02c15b2192d99865b1e033678",
+    "src/python/cr01_sc/handshake.py": "f200196ae577b27cf73e9472c0b19ebd95e9e16b862b28e3df29962b8e629040",
+    "src/python/cr01_sc/native.py": "ec1292c6bc8f5094e6696c11cf9d6907ad7e606d0f4146e8c79a8ead1de05ad5",
+    "tests/native/cpp/endpoint_tests.cpp": "45ab5f674c897955b1d4020fb12d23cf463bef926fc6517049a4f82a26180f63",
+    "tests/native/cpp/hardening_tests.cpp": "d410a7af358a7be372eda73901c2f5cb78ae40de32a2fb031f65b352f0e2876f",
+    "tests/native/test_binary.py": "51d140ac8008525d3e6303aaf42c3bb9b9ea4d39d883bf49410ed9b958935a94",
+    "tests/native/test_endpoint.py": "410fe115e83e4ee4e07a580a81e810c6af0978d3b7f15590360ebc40cd1e2478",
+    "tests/native/test_hardening.py": "5dfe051e1ac6fd9bbde4593a31a5f5d4634996a8ca4d6fcd6bc3b46548b40748",
+    "tools/build_native.ps1": "5db784bf0ab2e79b9d235b5bd9001fc08ba3006af7108ac84fecc1342b138f58",
+    "tools/build_native.sh": "5bda5e17bdb5fa6b8d0871fb93b92ae789c0457e072e7d814aef466c6e317419",
+    "tools/check_openssl.cpp": "000254ae2dfa25cc914b704255e7378385dabd580efae5f1827923a22d74805d",
+    "tools/interop.py": "67d367adfaf5a3c7c5dafd9512992e1979e7b4072d27c0529460a0849a54b236",
+    "tools/native.py": "9d697f42175c11fde1bbf8c89ddc11bf0868ecb13345dae5ae6a4b09237c2809",
+    "tools/benchmarks/transport.py": "1e1bf082cb54b0645110f1a9e6c7304ad1ed5fa75aedc7708c4302af0fa907ef",
+    "tests/benchmarks/cpp/transport.cpp": "49d948e49907a928555c4be4e7959b847915a9c129196bcd3db23f099b1ac90e",
+    "pyproject.toml": "04465a9657725bf1d0739218bdf56e610611855e2a918de42a9306ab3229fa9c"
+  },
+  "source_drift": [],
+  "app_executable_sha256": "7f0d675ade766799fe75bd589ee4f0a2e51512cb9eb6c56db9f3222121b7ff55",
+  "repeats": 3,
+  "runs": [
+    {
+      "kind": "native-in-process",
+      "identity_keygen": {
+        "samples": 10,
+        "mean_ms": 0.48111,
+        "p50_ms": 0.4783,
+        "p95_ms": 0.5617
+      },
+      "handshake": {
+        "samples": 30,
+        "mean_ms": 18.3355366667,
+        "p50_ms": 13.0013,
+        "p95_ms": 50.6393,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 10000,
+          "mean_ms": 0.00944856,
+          "p50_ms": 0.0028,
+          "p95_ms": 0.0045
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 10000,
+          "mean_ms": 0.00849981,
+          "p50_ms": 0.0038,
+          "p95_ms": 0.0058
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 1000,
+          "mean_ms": 0.0628298,
+          "p50_ms": 0.0591,
+          "p95_ms": 0.082
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 100,
+          "mean_ms": 1.41422,
+          "p50_ms": 1.2604,
+          "p95_ms": 1.8442
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "kind": "python-in-process",
+      "identity_keygen": {
+        "samples": 10,
+        "mean_ms": 0.41633,
+        "p50_ms": 0.4093,
+        "p95_ms": 0.4767
+      },
+      "handshake": {
+        "samples": 30,
+        "mean_ms": 17.761603333333333,
+        "p50_ms": 12.7595,
+        "p95_ms": 47.311,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 10000,
+          "mean_ms": 0.03957253,
+          "p50_ms": 0.0227,
+          "p95_ms": 0.0397
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 10000,
+          "mean_ms": 0.03629768,
+          "p50_ms": 0.0245,
+          "p95_ms": 0.0403
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 1000,
+          "mean_ms": 0.2040955,
+          "p50_ms": 0.1013,
+          "p95_ms": 0.1939
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 100,
+          "mean_ms": 3.68784,
+          "p50_ms": 2.4687,
+          "p95_ms": 5.1363
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "kind": "native-json-pipes",
+      "handshake": {
+        "samples": 10,
+        "mean_ms": 21.89887,
+        "p50_ms": 20.0984,
+        "p95_ms": 31.8626,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 500,
+          "mean_ms": 0.393901,
+          "p50_ms": 0.2545,
+          "p95_ms": 0.4796
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 500,
+          "mean_ms": 0.844463,
+          "p50_ms": 0.4729,
+          "p95_ms": 1.1111
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 100,
+          "mean_ms": 19.97376,
+          "p50_ms": 18.6448,
+          "p95_ms": 36.8675
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 20,
+          "mean_ms": 326.10543,
+          "p50_ms": 316.9293,
+          "p95_ms": 408.2668
+        }
+      ],
+      "openssl": "OpenSSL 3.6.5 29 Sep 2026",
+      "repeat": 1
+    },
+    {
+      "kind": "native-binary-pipes",
+      "handshake": {
+        "samples": 10,
+        "mean_ms": 16.90024,
+        "p50_ms": 17.3668,
+        "p95_ms": 22.3677,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 500,
+          "mean_ms": 0.3757026,
+          "p50_ms": 0.1797,
+          "p95_ms": 0.4346
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 500,
+          "mean_ms": 0.4351466,
+          "p50_ms": 0.2216,
+          "p95_ms": 0.6679
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 100,
+          "mean_ms": 0.549666,
+          "p50_ms": 0.398,
+          "p95_ms": 0.7191
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 20,
+          "mean_ms": 4.070425,
+          "p50_ms": 4.2514,
+          "p95_ms": 4.9537
+        }
+      ],
+      "openssl": "OpenSSL 3.6.5 29 Sep 2026",
+      "repeat": 1
+    },
+    {
+      "kind": "native-in-process",
+      "identity_keygen": {
+        "samples": 10,
+        "mean_ms": 0.54449,
+        "p50_ms": 0.4825,
+        "p95_ms": 0.749
+      },
+      "handshake": {
+        "samples": 30,
+        "mean_ms": 15.13956,
+        "p50_ms": 10.9806,
+        "p95_ms": 45.046,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 10000,
+          "mean_ms": 0.00774069,
+          "p50_ms": 0.0029,
+          "p95_ms": 0.0051
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 10000,
+          "mean_ms": 0.00446401,
+          "p50_ms": 0.0039,
+          "p95_ms": 0.006
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 1000,
+          "mean_ms": 0.0489165,
+          "p50_ms": 0.0443,
+          "p95_ms": 0.0674
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 100,
+          "mean_ms": 1.878186,
+          "p50_ms": 1.43,
+          "p95_ms": 3.9768
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "kind": "python-in-process",
+      "identity_keygen": {
+        "samples": 10,
+        "mean_ms": 0.53237,
+        "p50_ms": 0.5238,
+        "p95_ms": 0.5836
+      },
+      "handshake": {
+        "samples": 30,
+        "mean_ms": 19.585706666666667,
+        "p50_ms": 11.9917,
+        "p95_ms": 61.8344,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 10000,
+          "mean_ms": 0.03095868,
+          "p50_ms": 0.0229,
+          "p95_ms": 0.0386
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 10000,
+          "mean_ms": 0.03684335,
+          "p50_ms": 0.027,
+          "p95_ms": 0.0447
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 1000,
+          "mean_ms": 0.1950453,
+          "p50_ms": 0.104,
+          "p95_ms": 0.1804
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 100,
+          "mean_ms": 3.330584,
+          "p50_ms": 2.6168,
+          "p95_ms": 5.9385
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "kind": "native-binary-pipes",
+      "handshake": {
+        "samples": 10,
+        "mean_ms": 18.5961,
+        "p50_ms": 17.3882,
+        "p95_ms": 28.8103,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 500,
+          "mean_ms": 0.297671,
+          "p50_ms": 0.2015,
+          "p95_ms": 0.377
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 500,
+          "mean_ms": 0.1704926,
+          "p50_ms": 0.1592,
+          "p95_ms": 0.256
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 100,
+          "mean_ms": 0.398565,
+          "p50_ms": 0.3815,
+          "p95_ms": 0.6135
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 20,
+          "mean_ms": 6.448145,
+          "p50_ms": 4.6557,
+          "p95_ms": 7.2885
+        }
+      ],
+      "openssl": "OpenSSL 3.6.5 29 Sep 2026",
+      "repeat": 2
+    },
+    {
+      "kind": "native-json-pipes",
+      "handshake": {
+        "samples": 10,
+        "mean_ms": 18.46381,
+        "p50_ms": 15.0605,
+        "p95_ms": 26.2903,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 500,
+          "mean_ms": 0.2859416,
+          "p50_ms": 0.2498,
+          "p95_ms": 0.4485
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 500,
+          "mean_ms": 0.6932256,
+          "p50_ms": 0.4789,
+          "p95_ms": 0.824
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 100,
+          "mean_ms": 19.626829,
+          "p50_ms": 17.8018,
+          "p95_ms": 43.8393
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 20,
+          "mean_ms": 309.48034,
+          "p50_ms": 306.0506,
+          "p95_ms": 362.8201
+        }
+      ],
+      "openssl": "OpenSSL 3.6.5 29 Sep 2026",
+      "repeat": 2
+    },
+    {
+      "kind": "native-in-process",
+      "identity_keygen": {
+        "samples": 10,
+        "mean_ms": 0.51581,
+        "p50_ms": 0.5147,
+        "p95_ms": 0.5694
+      },
+      "handshake": {
+        "samples": 30,
+        "mean_ms": 11.38919,
+        "p50_ms": 7.7191,
+        "p95_ms": 43.7449,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 10000,
+          "mean_ms": 0.00370132,
+          "p50_ms": 0.0028,
+          "p95_ms": 0.0047
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 10000,
+          "mean_ms": 0.00777684,
+          "p50_ms": 0.0043,
+          "p95_ms": 0.0068
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 1000,
+          "mean_ms": 0.1043581,
+          "p50_ms": 0.0538,
+          "p95_ms": 0.1162
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 100,
+          "mean_ms": 1.188592,
+          "p50_ms": 1.1477,
+          "p95_ms": 2.127
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "kind": "python-in-process",
+      "identity_keygen": {
+        "samples": 10,
+        "mean_ms": 0.27278,
+        "p50_ms": 0.271,
+        "p95_ms": 0.3108
+      },
+      "handshake": {
+        "samples": 30,
+        "mean_ms": 22.057653333333334,
+        "p50_ms": 11.7541,
+        "p95_ms": 69.4792,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 10000,
+          "mean_ms": 0.039141630000000004,
+          "p50_ms": 0.0223,
+          "p95_ms": 0.0372
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 10000,
+          "mean_ms": 0.0441987,
+          "p50_ms": 0.0226,
+          "p95_ms": 0.0446
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 1000,
+          "mean_ms": 0.1700914,
+          "p50_ms": 0.0992,
+          "p95_ms": 0.1822
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 100,
+          "mean_ms": 4.933424,
+          "p50_ms": 3.0638,
+          "p95_ms": 12.7416
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "kind": "native-json-pipes",
+      "handshake": {
+        "samples": 10,
+        "mean_ms": 23.187739999999998,
+        "p50_ms": 20.9466,
+        "p95_ms": 34.9265,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 500,
+          "mean_ms": 0.3966314,
+          "p50_ms": 0.253,
+          "p95_ms": 0.4582
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 500,
+          "mean_ms": 0.6884646,
+          "p50_ms": 0.4652,
+          "p95_ms": 0.873
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 100,
+          "mean_ms": 17.983605,
+          "p50_ms": 18.3698,
+          "p95_ms": 21.405
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 20,
+          "mean_ms": 291.47048,
+          "p50_ms": 283.3482,
+          "p95_ms": 335.79
+        }
+      ],
+      "openssl": "OpenSSL 3.6.5 29 Sep 2026",
+      "repeat": 3
+    },
+    {
+      "kind": "native-binary-pipes",
+      "handshake": {
+        "samples": 10,
+        "mean_ms": 18.71287,
+        "p50_ms": 19.655,
+        "p95_ms": 25.8695,
+        "wire_bytes": 26137
+      },
+      "records": [
+        {
+          "payload_bytes": 64,
+          "encoded_bytes": 125,
+          "samples": 500,
+          "mean_ms": 0.3014064,
+          "p50_ms": 0.1905,
+          "p95_ms": 0.3766
+        },
+        {
+          "payload_bytes": 1024,
+          "encoded_bytes": 1085,
+          "samples": 500,
+          "mean_ms": 0.3695628,
+          "p50_ms": 0.2086,
+          "p95_ms": 0.4439
+        },
+        {
+          "payload_bytes": 65536,
+          "encoded_bytes": 65597,
+          "samples": 100,
+          "mean_ms": 0.343633,
+          "p50_ms": 0.3304,
+          "p95_ms": 0.4484
+        },
+        {
+          "payload_bytes": 1048576,
+          "encoded_bytes": 1048637,
+          "samples": 20,
+          "mean_ms": 7.02264,
+          "p50_ms": 4.8151,
+          "p95_ms": 16.3543
+        }
+      ],
+      "openssl": "OpenSSL 3.6.5 29 Sep 2026",
+      "repeat": 3
+    }
+  ],
+  "comparison": [
+    {
+      "payload_bytes": 64,
+      "json_ms": 0.393901,
+      "binary_ms": 0.3014064,
+      "json_over_binary_elapsed_ratio": 1.3068766953853665,
+      "binary_payload_mib_per_second": 0.20250119523009463
+    },
+    {
+      "payload_bytes": 1024,
+      "json_ms": 0.6932256,
+      "binary_ms": 0.3695628,
+      "json_over_binary_elapsed_ratio": 1.875799187580568,
+      "binary_payload_mib_per_second": 2.6424805202255204
+    },
+    {
+      "payload_bytes": 65536,
+      "json_ms": 19.626829,
+      "binary_ms": 0.398565,
+      "json_over_binary_elapsed_ratio": 49.24373439714978,
+      "binary_payload_mib_per_second": 156.81256507721451
+    },
+    {
+      "payload_bytes": 1048576,
+      "json_ms": 309.48034,
+      "binary_ms": 6.448145,
+      "json_over_binary_elapsed_ratio": 47.995251347480554,
+      "binary_payload_mib_per_second": 155.08336118372029
+    }
+  ],
+  "aggregation": "Median of per-run means, not pooled latency percentiles; individual run p50/p95 retained.",
+  "claim_boundary": "Local synthetic single-thread Windows timing; no CPU isolation, fixed-clock/thermal/idle gate, network, server-capacity, constant-time or TLS/security-equivalence claim. One record operation is seal plus authenticated receive; Python orchestration and copies included in app timings. Identity provisioning/process startup excluded from handshakes. Different OpenSSL backends for Python/native; not a pure language comparison. All payloads checked; no private keys retained."
+}

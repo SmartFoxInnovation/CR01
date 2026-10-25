@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cr01-sc"
+version = "0.15.2"
+description = "CR01-SC source-available secure-session validation prototype."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "PolyForm-Noncommercial-1.0.0" }
+authors = [
+  { name = "CR01 contributors" }
+]
+keywords = [
+  "cryptography",
+  "secure-session",
+  "post-quantum-transition",
+  "research-prototype",
+  "wire-protocol"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: Other/Proprietary License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Security :: Cryptography"
+]
+dependencies = [
+  "cryptography>=50.0.2,<51"
+]
+
+[project.scripts]
+cr01-showcase = "cr01_sc.app:main"
+cr01-demo = "cr01_sc.native_demo:main"
+cr01-reference-demo = "cr01_sc.demo:main"
+
+[tool.setuptools]
+package-dir = { "" = "src/python" }
+
+[tool.setuptools.packages.find]
+where = ["src/python"]
+include = ["cr01_sc*"]
+
+[tool.setuptools.package-data]
+cr01_sc = ["web/*"]

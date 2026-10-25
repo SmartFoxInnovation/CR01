@@ -1,0 +1,102 @@
+{
+  "schema": "CR01-NATIVE-DEMO-v1",
+  "summary": {
+    "version": 2,
+    "status": "ready",
+    "mutual_authentication": true,
+    "key_confirmation": true,
+    "context_match": true,
+    "directional_keys": true,
+    "payload_decrypts": true,
+    "request_id": 9700,
+    "key_mode": "fresh-native-os-keys",
+    "toy_core_used": false,
+    "restart_policy": "fresh-full-handshake-no-resumption",
+    "all_attack_checks_pass": true
+  },
+  "engine": {
+    "implementation": "C++",
+    "transport": "CRB1 binary via cr01_sc.native",
+    "executable_sha256": "eb60e9124e3b3bc44cb76e113f9351014d83b2182f1d0fab17f1924475eb8ab6",
+    "openssl": [
+      "OpenSSL 3.6.5 29 Sep 2026"
+    ],
+    "native_peer_processes": 9,
+    "python_reference_used": false,
+    "boundary": "Executable hash identifies the local file; not author authentication or independent assurance."
+  },
+  "transcript": {
+    "identity_pins": {
+      "initiator_sha256": "3ef1a19c82fe4d3a62035c4f99de4e2dbcdf5889c1d18ba17b4dbea3817dee88",
+      "responder_sha256": "8f02666f151898b3ba14572de65cac3822384088bc6da5a2a84b135205082d23"
+    },
+    "flights": {
+      "initiator_hello": {
+        "bytes": 7036,
+        "sha256": "e5c644f7b8b6f4a3246f42d0788c8e2d4f245555b34c632c5410f69fdc46a7a3"
+      },
+      "responder_hello": {
+        "bytes": 9500,
+        "sha256": "e7a5e68fdb1d8363cfc7afb455bcdb3ead79539dfdfac9ea1f70df826b269ffb"
+      },
+      "initiator_finish": {
+        "bytes": 9396,
+        "sha256": "a9c5a3c8e46275408d89b73b232723d2e6f55a69fb269574e5af31eb79445379"
+      },
+      "responder_finished": {
+        "bytes": 199,
+        "sha256": "7cfdf50059744bf097b2b8c1390bb274d34cf82e4e21b91137b051034331cc74"
+      }
+    },
+    "records": {
+      "session_id": "8996c33d39a197fb6aad3646fcac10ff",
+      "sent_bytes": 76,
+      "reply_bytes": 74
+    }
+  },
+  "attacks": {
+    "record_replay_rejected": true,
+    "record_reflection_rejected": true,
+    "record_tamper_rejected": true,
+    "old_record_after_restart_rejected": true,
+    "old_finish_after_restart_rejected": true,
+    "cross_session_record_rejected": true,
+    "downgrade_rejected": true,
+    "untrusted_identity_rejected": true
+  },
+  "trust_decisions": {
+    "initiator_pin": {
+      "trusted": true
+    },
+    "responder_pin": {
+      "trusted": true
+    }
+  },
+  "product_version": "0.15.2",
+  "generated_at": "2026-10-25T00:56:48.290335+00:00",
+  "source_sha256": {
+    "config/native-packages.lock": "246f147409dd22373e8654487cc3265df2c8ceaa2f327a24ce6e89fe5d85999e",
+    "config/native-packages.lock.json": "6b78df5ed39bae409fa7a285e0aebc72e2a16a43e45168e0561f81f5985191da",
+    "src/cpp/channel_binary.hpp": "957696dc0aa74b47a1637ba32bc7bc3674d3c8b963c2eb087ccc2d3f7dd4f285",
+    "src/cpp/channel_v2_core.hpp": "449f405fd7cc1d028097a478c67977df6ebbcbed54924a7c69d623e25b2f1569",
+    "src/cpp/channel_v2_crypto.hpp": "7430d876e7bc100df0561e20cb80081719d630c8bb6484b8ecb47b7edcb18065",
+    "src/cpp/channel_v2_endpoint.hpp": "09254f950befefa95e0f17a75e24d30f71f041b6ea67792fb31d1ed33fdc5b28",
+    "src/cpp/channel_v2_flight.hpp": "ace4a2c8b7dbdd87ba722876d109df5181052f4f37e5025d1d87916a16395c86",
+    "src/cpp/channel_v2_gcm.hpp": "293966ee202f3395792d21254186ad007ce6713acf3d81002c582850cbe00986",
+    "src/cpp/channel_v2_identity.hpp": "7867d7cbb234724409ff29321cecf1edba84af6ae32f5217b6a9411e85585f0a",
+    "src/cpp/channel_v2_plaintext.hpp": "4351c69b989c511c7bf2038b72fef91bf67ec68122ab1916705f5bcf7eae0042",
+    "src/cpp/channel_v2_secret.hpp": "dff2948dc4fcb0d76fec73cb3a246baf41831f7bef99f9ab5e36a368f28c75ef",
+    "src/cpp/crypto.hpp": "126e5e70a40666f1f2dca00f459098d8164801f8d8cda99f6c7b10d08dd19ec3",
+    "src/cpp/json.hpp": "13d72c6dde422b92dcab1b7512ebb4249df9d3f69e86f2e97f186e69eb388783",
+    "src/cpp/main.cpp": "3bd1e91d743b77ca8f79cc6c72d731f92b23eb799c4986eaffaf42d6fa2b0d86",
+    "src/python/cr01_sc/__init__.py": "d2c96d9456eb091265e2ede99245ddd873b280bebb042f40d8bd8705ee834704",
+    "src/python/cr01_sc/_paths.py": "475db97b90823184299df14b824cec4bf175d9569d8b59c6474206a0424fef1b",
+    "src/python/cr01_sc/binary.py": "f3e430ec73830f514f860599a1ef4c067c02442f0b0e4cb02522b7b6ef70c8ff",
+    "src/python/cr01_sc/native.py": "ec1292c6bc8f5094e6696c11cf9d6907ad7e606d0f4146e8c79a8ead1de05ad5",
+    "src/python/cr01_sc/native_demo.py": "b3610a0476b9e1313df7af9b20ebb4df0f5ea1db0c4735d36efd2685492f8764",
+    "src/python/cr01_sc/reporting.py": "ee9296240a6926f5332894e38d5ece0325fb357405b7e971068485d203f05a28",
+    "tools/build_native.ps1": "5db784bf0ab2e79b9d235b5bd9001fc08ba3006af7108ac84fecc1342b138f58",
+    "tools/build_native.sh": "5bda5e17bdb5fa6b8d0871fb93b92ae789c0457e072e7d814aef466c6e317419",
+    "tools/check_openssl.cpp": "000254ae2dfa25cc914b704255e7378385dabd580efae5f1827923a22d74805d"
+  }
+}

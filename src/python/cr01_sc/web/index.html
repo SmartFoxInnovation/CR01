@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07100f">
+  <meta name="description" content="CR01-SC research demo: protocol checks, benchmarks and security limits.">
+  <title>CR01 // Evidence Console</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/app.css?v=0.15.2">
+  <script src="/assets/app.js?v=0.15.2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to evidence</a>
+
+  <div class="app-shell">
+    <aside class="side-rail" aria-label="Primary navigation">
+      <a class="brand" href="#overview" aria-label="CR01 Evidence Console home">
+        <img class="brand-logo" src="/assets/cr01-logo.png" alt="CR01" width="1774" height="887">
+        <small>EVIDENCE CONSOLE</small>
+      </a>
+
+      <nav class="rail-nav">
+        <a class="active" href="#overview"><span>01</span>Overview</a>
+        <a href="#live-proof"><span>02</span>Live checks</a>
+        <a href="#evidence"><span>03</span>Evidence</a>
+        <a href="#complexity"><span>04</span>Complexity</a>
+        <a href="#quantum"><span>05</span>Security</a>
+        <a href="#enterprise"><span>06</span>Evaluation</a>
+      </nav>
+
+      <div class="rail-foot">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div><strong id="rail-status">Connecting</strong><small>Research preview</small></div>
+      </div>
+    </aside>
+
+    <main id="main-content">
+      <header class="topbar">
+        <div class="topbar-breadcrumb"><span id="product-label">CR01-SC</span><i>/</i><strong>Protocol demo</strong></div>
+        <div class="topbar-actions">
+          <span class="snapshot-time" id="snapshot-time">Snapshot —</span>
+          <button class="text-button hidden" id="access-button" type="button">Access token</button>
+          <a class="text-button" href="/api/v1/evidence/export" id="export-link" download>Export evidence ↗</a>
+        </div>
+      </header>
+
+      <section class="hero page-section" id="overview" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>CR01-SC v2</span></p>
+          <h1 id="hero-title">Session protocol demo</h1>
+          <p class="hero-lead">ML-KEM key exchange, pinned ML-DSA identities and AES-GCM records. Run the C++ engine, inspect the test results and compare performance.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#live-proof">Run live checks <span>→</span></a>
+            <a class="secondary-action" href="#quantum">Security limits</a>
+          </div>
+          <div class="claim-strip">
+            <span class="claim-icon" aria-hidden="true">Q</span>
+            <div><strong id="quantum-short-claim">Research preview — not production-ready</strong><small>No independent audit, quantum-security proof or side-channel assurance.</small></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Five-stage CR01 secure context protocol visualization">
+          <div class="visual-grid" aria-hidden="true"></div>
+          <div class="orbit orbit-outer" aria-hidden="true"></div>
+          <div class="orbit orbit-mid" aria-hidden="true"></div>
+          <div class="context-core">
+            <span class="core-label">CONTEXT</span>
+            <strong>256</strong>
+            <small>context bits</small>
+          </div>
+          <div class="orbit-node node-a"><span>01</span><strong>KEM</strong></div>
+          <div class="orbit-node node-b"><span>02</span><strong>SIGN</strong></div>
+          <div class="orbit-node node-c"><span>03</span><strong>Confirm</strong></div>
+          <div class="orbit-node node-d"><span>04</span><strong>AEAD</strong></div>
+          <div class="orbit-node node-e"><span>05</span><strong>RESTART</strong></div>
+          <div class="visual-caption"><span></span> ML-KEM-768 · ML-DSA-65 · AES-256-GCM</div>
+        </div>
+      </section>
+
+      <section class="metric-band" aria-label="Supplied evidence headline metrics">
+        <div class="metric-grid" id="headline-metrics" aria-live="polite">
+          <div class="metric-skeleton"></div><div class="metric-skeleton"></div><div class="metric-skeleton"></div>
+        </div>
+      </section>
+
+      <section class="page-section protocol-section" aria-labelledby="protocol-title">
+        <div class="section-heading split-heading">
+          <div><p class="section-index">01 / PROTOCOL</p><h2 id="protocol-title">Protocol overview</h2></div>
+        </div>
+        <div class="protocol-flow" id="protocol-flow"></div>
+      </section>
+
+      <section class="page-section proof-section" id="live-proof" aria-labelledby="proof-title">
+        <div class="section-heading">
+          <p class="section-index">02 / LIVE CHECKS</p>
+          <h2 id="proof-title">Run protocol checks</h2>
+          <p>Test the handshake, peer confirmation, encrypted records, tampering, replay and restart handling. Uses the C++ engine through the Python wrapper.</p>
+        </div>
+
+        <div class="proof-layout">
+          <div class="proof-control">
+            <div class="proof-status-line">
+              <span class="proof-beacon" aria-hidden="true"></span>
+              <div><small>LIVE VALIDATION</small><strong id="proof-status">Ready to run</strong></div>
+              <span class="proof-duration" id="proof-duration">— ms</span>
+            </div>
+
+            <ol class="proof-steps" aria-label="Live validation phases">
+              <li data-live-step="establish"><span>01</span><div><strong>Establish</strong><small>ML-KEM context</small></div><i></i></li>
+              <li data-live-step="authenticate"><span>02</span><div><strong>Authenticate</strong><small>ML-DSA + trust</small></div><i></i></li>
+              <li data-live-step="confirm"><span>03</span><div><strong>Confirm</strong><small>Mutual transcript Finished</small></div><i></i></li>
+              <li data-live-step="protect"><span>04</span><div><strong>Protect</strong><small>AES-256-GCM record</small></div><i></i></li>
+              <li data-live-step="attack"><span>05</span><div><strong>Challenge</strong><small>Replay / tamper / MITM</small></div><i></i></li>
+            </ol>
+
+            <div class="proof-runner">
+              <label for="demo-seed">Validation request id</label>
+              <div><input id="demo-seed" type="number" min="0" max="2147483647" value="9700" inputmode="numeric"><button class="primary-action" id="run-proof" type="button">Run live validation <span>→</span></button></div>
+            </div>
+            <p class="microcopy">Build the C++ engine before running checks.</p>
+          </div>
+
+          <div class="proof-output" aria-live="polite">
+            <div class="output-head"><div><span></span><span></span><span></span></div><strong>Test output</strong><small id="proof-run-id">IDLE</small></div>
+            <div class="output-body" id="proof-output">
+              <div class="idle-output"><strong>Ready to run</strong><p>Results appear here after validation.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section evidence-section" id="evidence" aria-labelledby="evidence-title">
+        <div class="section-heading split-heading">
+          <div><p class="section-index">03 / RESULTS</p><h2 id="evidence-title">Test results</h2></div>
+        </div>
+        <div class="evidence-table" id="evidence-table" role="table" aria-label="CR01 evidence families"></div>
+        <details class="source-disclosure">
+          <summary>Report files <span>date · SHA-256</span></summary>
+          <div class="source-list" id="source-list"></div>
+        </details>
+      </section>
+
+      <section class="page-section performance-section" aria-labelledby="performance-title">
+        <div class="section-heading split-heading">
+          <div><p class="section-index">04 / PERFORMANCE</p><h2 id="performance-title">Record performance</h2></div>
+          <p id="performance-context">Loading native same-machine benchmark…</p>
+        </div>
+        <div class="performance-layout">
+          <div class="latency-chart" id="latency-chart" aria-label="Native one kilobyte round-trip latency comparison"></div>
+          <aside class="performance-callout">
+            <span class="callout-kicker">AES-GCM BASELINE</span>
+            <strong>Bare AES-GCM is faster.</strong>
+            <p>The AES-only baseline excludes peer authentication, session establishment and replay protection.</p>
+            <div class="callout-number"><span id="cr01-throughput">—</span><small>seal + receive pairs / second<br>at 1 KiB locally</small></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page-section" aria-labelledby="lifecycle-title">
+        <div class="section-heading">
+          <h2 id="lifecycle-title">Startup and session timings</h2>
+        </div>
+        <div id="lifecycle-measurements" aria-live="polite"></div>
+      </section>
+
+      <section class="page-section complexity-section" id="complexity" aria-labelledby="complexity-title">
+        <div class="section-heading split-heading">
+          <div><p class="section-index">05 / PARAMETERS</p><h2 id="complexity-title">Algorithms and key sizes</h2></div>
+        </div>
+        <div class="complexity-tabs" id="complexity-tabs" role="tablist" aria-label="Cryptographic component"></div>
+        <div class="complexity-stage" id="complexity-stage"></div>
+      </section>
+
+      <section class="page-section quantum-section" id="quantum" aria-labelledby="quantum-title">
+        <div class="quantum-hero">
+          <div>
+            <p class="section-index">06 / SECURITY</p>
+            <h2 id="quantum-title">Post-quantum primitives</h2>
+          </div>
+          <p id="quantum-headline">Loading security details…</p>
+        </div>
+
+        <div class="quantum-columns">
+          <article class="quantum-positive">
+            <span class="article-symbol" aria-hidden="true">+</span>
+            <h3>Algorithms</h3>
+            <ul id="quantum-why"></ul>
+          </article>
+          <article class="quantum-boundary">
+            <span class="article-symbol" aria-hidden="true">≠</span>
+            <h3>Security limits</h3>
+            <ul id="quantum-not"></ul>
+          </article>
+        </div>
+
+        <div class="gate-panel">
+          <div class="gate-head"><strong>Review status</strong><span>Design · Implementation · Operations</span></div>
+          <div class="gate-list" id="quantum-gates"></div>
+        </div>
+        <div class="standards-row" id="standards-row"></div>
+      </section>
+
+      <section class="page-section enterprise-section" id="enterprise" aria-labelledby="enterprise-title">
+        <div class="section-heading split-heading">
+          <div><p class="section-index">07 / EVALUATION</p><h2 id="enterprise-title">Evaluation and deployment</h2></div>
+        </div>
+        <div class="deployment-path" id="deployment-path"></div>
+        <div class="enterprise-bottom">
+          <div>
+            <h3>Included</h3>
+            <ul class="asset-list" id="evaluation-assets"></ul>
+          </div>
+          <div>
+            <h3>Status</h3>
+            <div class="maturity-list" id="maturity-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-mark"><img class="brand-logo" src="/assets/cr01-logo.png" alt="CR01" width="120" height="60" loading="lazy"></div>
+        <p class="footer-license">
+          <strong>Source-available validation edition</strong>
+          <span>PolyForm Noncommercial 1.0.0 · no commercial use</span>
+        </p>
+        <div><span id="report-health">— / — reports</span><a href="#overview">Back to top ↑</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <dialog id="access-dialog" aria-labelledby="access-title">
+    <div class="dialog-head"><p class="section-index">CONTROLLED ACCESS</p><button type="button" id="close-access" aria-label="Close access dialog">×</button></div>
+    <h2 id="access-title">Enter evaluation token</h2>
+    <p>This deployment requires the bearer token configured by the server operator. It stays in this browser tab only.</p>
+    <label for="access-token">Bearer token</label>
+    <input id="access-token" type="password" autocomplete="off" spellcheck="false">
+    <button class="primary-action" id="save-access" type="button">Unlock evidence <span>→</span></button>
+    <p class="dialog-error" id="access-error" role="alert"></p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
